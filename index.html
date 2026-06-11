@@ -1,86 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haresh Jadav | Physics & Mars Research</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Haresh Jadav | Mars & Physics Research</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* NAVIGATION */
+nav {
+  background: rgba(0,0,0,0.75);
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 15px;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: #ffcc66;
+}
+
+/* SECTIONS */
+section {
+  display: none;
+  margin: 30px;
+  padding: 40px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 15px;
+}
+
+/* ACTIVE SECTION */
+.active {
+  display: block;
+}
+
+/* TITLES */
+h1, h2, h3 {
+  color: #ffcc66;
+}
+
+/* IMAGE STYLE */
+img {
+  max-width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* LINKS */
+a {
+  color: #66ccff;
+}
+</style>
+
 </head>
 
-<body style="margin:0; font-family:Arial, sans-serif; line-height:1.6;">
+<body>
 
 <!-- NAVIGATION -->
-<div style="position:sticky; top:0; background:#ffffff; padding:12px; border-bottom:1px solid #ddd; text-align:center;">
-  <a href="#home">Home</a> |
-  <a href="#about">About</a> |
-  <a href="#research">Research</a> |
-  <a href="#projects">Projects</a> |
-  <a href="#blog">Mars Blog</a> |
-  <a href="#contact">Contact</a>
-</div>
+<nav>
+  <button onclick="show('home')">Home</button>
+  <button onclick="show('about')">About</button>
+  <button onclick="show('research')">Research</button>
+  <button onclick="show('projects')">Projects</button>
+  <button onclick="show('blog')">Mars Blog</button>
+  <button onclick="show('links')">Useful Links</button>
+  <button onclick="show('contact')">Contact</button>
+</nav>
 
 <!-- HOME -->
-<section id="home" style="padding:60px; text-align:center; background:#f5f7fa;">
-  <h1 style="font-size:40px;">Haresh Jadav</h1>
-  <h3>Physics Researcher | Mars • Astrophysics • Planetary Science</h3>
-  <p>Building research in space science and planetary exploration</p>
+<section id="home" class="active">
+  <h1>Haresh Jadav</h1>
+  <h3>Physics | Mars | Astrophysics Researcher</h3>
 
-  <img src="https://via.placeholder.com/180" style="border-radius:50%; margin-top:20px;">
+  <!-- PROFILE PHOTO (CHANGE THIS LINK) -->
+  <img src="https://via.placeholder.com/200" alt="Your Photo">
+
+  <p>Welcome to my research portfolio in space science and planetary exploration.</p>
 </section>
 
 <!-- ABOUT -->
-<section id="about" style="padding:60px;">
+<section id="about">
   <h2>About Me</h2>
   <p>
     I am a Physics researcher interested in Mars science, astrophysics,
     planetary atmospheres, and space exploration. My goal is to pursue
-    a PhD in planetary science and contribute to Mars exploration missions.
+    a PhD in planetary science and contribute to Mars missions.
   </p>
 </section>
 
 <!-- RESEARCH -->
-<section id="research" style="padding:60px; background:#f9f9f9;">
+<section id="research">
   <h2>Research Experience</h2>
   <ul>
-    <li>Solar rotation and sunspot analysis</li>
+    <li>Solar physics & sunspot analysis</li>
     <li>FESEM / EDX material characterization</li>
     <li>Condensed matter physics research</li>
-    <li>Remote sensing training (ISRO - IIRS)</li>
+    <li>Remote sensing training (ISRO)</li>
   </ul>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" style="padding:60px;">
+<section id="projects">
   <h2>Projects</h2>
   <ul>
-    <li>Solar physics data analysis</li>
-    <li>Materials research using XRD and EDX</li>
-    <li>Mars planetary science study</li>
+    <li>Mars atmospheric study</li>
+    <li>Solar rotation research</li>
+    <li>Materials analysis using XRD/EDX</li>
   </ul>
 </section>
 
 <!-- BLOG -->
-<section id="blog" style="padding:60px; background:#f9f9f9;">
+<section id="blog">
   <h2>Mars Blog 🪐</h2>
-  <p>Daily updates on Mars missions, NASA discoveries, and personal research notes.</p>
+  <p>Daily Mars updates, NASA discoveries, ISRO missions, and my research notes.</p>
 
   <ul>
-    <li>NASA Mars Rover updates</li>
-    <li>ISRO planetary exploration news</li>
-    <li>My learning notes in planetary science</li>
+    <li>Latest Mars rover updates</li>
+    <li>New exoplanet discoveries</li>
+    <li>Space physics learning notes</li>
   </ul>
 </section>
 
+<!-- USEFUL LINKS -->
+<section id="links">
+  <h2>Useful Links 🔗</h2>
+
+  <ul>
+    <li><a href="https://mars.nasa.gov/" target="_blank">NASA Mars Exploration</a></li>
+    <li><a href="https://www.isro.gov.in/" target="_blank">ISRO Official Site</a></li>
+    <li><a href="https://arxiv.org/" target="_blank">arXiv Research Papers</a></li>
+    <li><a href="https://nasa.gov/" target="_blank">NASA Official Site</a></li>
+  </ul>
+
+  <p>You can add more research or university links here later.</p>
+</section>
+
 <!-- CONTACT -->
-<section id="contact" style="padding:60px;">
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: yourmail@gmail.com</p>
 </section>
 
-<!-- FOOTER -->
-<footer style="text-align:center; padding:20px; background:#111; color:white;">
-  © 2026 Haresh Jadav | Physics & Mars Research
-</footer>
+<script>
+function show(id) {
+  let sections = document.querySelectorAll("section");
+  sections.forEach(sec => sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
 
 </body>
 </html>
