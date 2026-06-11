@@ -1,367 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haresh R. Jadav | Physics Researcher</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport"
+content="width=device-width, initial-scale=1.0"> <title>Haresh R. Jadav | Physics & Mars Research</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#050816;
-color:white;
-overflow-x:hidden;
-}
-
-/* Animated Stars */
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(white 1px, transparent 1px),
-radial-gradient(white 1px, transparent 1px);
-background-size:50px 50px;
-background-position:0 0,25px 25px;
-opacity:.15;
-z-index:-2;
-}
-
-/* Mars Background */
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px;
-background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1500&q=80');
-background-size:cover;
-background-position:center;
-}
-
-.hero-content{
-max-width:900px;
-}
-
-.profile{
-width:220px;
-height:220px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #ff6b00;
-box-shadow:0 0 30px #ff6b00;
-}
-
-.hero h1{
-font-size:4rem;
-margin-top:20px;
-color:#ff6b00;
-}
-
-.hero h2{
-font-weight:300;
-margin-top:10px;
-}
-
-.hero p{
-margin-top:20px;
-font-size:1.1rem;
-line-height:1.8;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 25px;
-background:#ff6b00;
-color:white;
-text-decoration:none;
-border-radius:30px;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-section{
-padding:80px 10%;
-}
-
-.section-title{
-font-size:2.5rem;
-color:#ff6b00;
-margin-bottom:30px;
-text-align:center;
-}
-
-.card{
-background:#10172b;
-padding:30px;
-border-radius:15px;
-margin-bottom:25px;
-box-shadow:0 0 15px rgba(255,255,255,.05);
-}
-
-.card h3{
-color:#ff6b00;
-margin-bottom:10px;
-}
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.skill{
-background:#ff6b00;
-padding:10px 18px;
-border-radius:30px;
-}
-
-.timeline{
-border-left:3px solid #ff6b00;
-padding-left:25px;
-}
-
-.timeline-item{
-margin-bottom:30px;
-}
-
-footer{
-background:black;
-padding:30px;
-text-align:center;
-}
-
-</style>
-</head>
-
+*{ margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+body{ background:url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564') no-repeat
+center center fixed; background-size:cover; color:white; }
+/ Navigation /
+nav{ background:rgba(0,0,0,0.85); padding:15px; text-align:center; position:sticky; top:0; z-index:1000;
+backdrop-filter:blur(10px); }
+nav button{ background:none; border:none; color:white; font-size:16px; margin:0 10px; cursor:pointer;
+padding:8px 15px; border-radius:20px; }
+nav button:hover{ background:#ff7b00; }
+/ Sections /
+section{ display:none; padding:50px; margin:30px; background:rgba(0,0,0,0.70); border-radius:20px;
+backdrop-filter:blur(6px); }
+.active{ display:block; }
+h1,h2,h3{ color:#ffb347; margin-bottom:15px; }
+.hero{ text-align:center; }
+.hero img{ width:220px; height:220px; border-radius:50%; border:4px solid #ff7b00; object-fit:cover; margin
+bottom:20px; }
+.card{ background:rgba(255,255,255,0.05); padding:20px; margin:15px 0; border-radius:12px; }
+ul{ padding-left:20px; }
+li{ margin-bottom:8px; }
+footer{ text-align:center; padding:20px; background:rgba(0,0,0,0.8); }
+</style> </head>
 <body>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<img src="your-photo.jpg" class="profile">
-
+1
+<nav> <button onclick="showPage('home')">Home</button> <button onclick="showPage('about')">About</
+button> <button onclick="showPage('research')">Research</button> <button
+onclick="showPage('projects')">Projects</button> <button onclick="showPage('awards')">Awards</button>
+<button onclick="showPage('mars')">Mars Science</button> <button
+onclick="showPage('contact')">Contact</button> </nav>
+<section id="home" class="active"> <div class="hero">
+<img src="profile.jpg" alt="Haresh Jadav">
 <h1>Haresh R. Jadav</h1>
-
-<h2>
-Physics Researcher • Planetary Science Enthusiast • Mars Exploration
-</h2>
-
-<p>
-Project Associate (DST) at CHARUSAT.
-Research interests include Condensed Matter Physics,
-Nanomaterials, Green Hydrogen Generation,
-Planetary Science, Mars Atmosphere,
-Remote Sensing and Space Exploration.
+<h3>Physics Researcher | Planetary Science Enthusiast | Mars Exploration</h3>
+<p> Project Associate (DST), CHARUSAT University </p>
+<p> Working in Materials Science, Green Hydrogen, Advanced Characterization and Future Mars Research.
 </p>
-
-<a href="#contact" class="btn">Contact Me</a>
-
-</div>
-
+</div> </section>
+<section id="about">
+<h2>About Me</h2>
+<div class="card"> M.Sc. Physics graduate from Sardar Patel University and currently working as a DST
+Project Associate at CHARUSAT. </div>
+<div class="card"> Research interests include Nanomaterials, Green Hydrogen, Planetary Science, Mars
+Atmosphere, Remote Sensing and Space Exploration. </div>
 </section>
-
-<section>
-
-<h2 class="section-title">About Me</h2>
-
-<div class="card">
-
-I am a Physics researcher currently working as a Project Associate (DST)
-at CHARUSAT University. My work focuses on advanced materials,
-electrocatalysis, green hydrogen generation, wastewater treatment,
-and characterization using XRD, Raman, SEM, FEG-SEM, UV-Vis and LC-HRMS.
-
-My future research goal is pursuing a PhD in Planetary Science with
-special emphasis on Mars Atmosphere, Ionosphere, Space Weather,
-Planetary Evolution and Exploration Technologies.
-
-</div>
-
+<section id="research">
+<h2>Research Experience</h2>
+<div class="card"> Project Associate (DST), CHARUSAT (2024–Present) </div>
+<div class="card"> Research Project Student, Department of Physics, SPU </div>
+<div class="card"> Research Intern, S.N. Bose National Centre for Basic Sciences, Kolkata </div>
+<div class="card"> Advanced Instrument Experience: FEG-SEM, SEM, XRD, Raman, UV-Vis, LC-HRMS </div>
+2
 </section>
-
-<section>
-
-<h2 class="section-title">Education</h2>
-
-<div class="card">
-<h3>M.Sc. Physics (2023)</h3>
-Sardar Patel University, Vallabh Vidyanagar
-</div>
-
-<div class="card">
-<h3>B.Sc. Physics (2021)</h3>
-V.P. & R.P.T.P Science College
-</div>
-
+<section id="projects">
+<h2>Projects</h2>
+<ul> <li>Mars Atmosphere and Ionosphere Study</li> <li>Solar Rotation Period and Sunspot Analysis</li>
+<li>Green Hydrogen Generation (HER/OER)</li> <li>Electrochemical Wastewater Treatment</li> <li>NdNiO3
+Nanostructures</li> <li>Remote Sensing Applications</li> </ul>
 </section>
-
-<section>
-
-<h2 class="section-title">Research Experience</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-<h3>Project Associate (DST)</h3>
-<p>CHARUSAT University (2024–Present)</p>
-</div>
-
-<div class="timeline-item">
-<h3>Research Project Student</h3>
-<p>Department of Physics, SPU</p>
-</div>
-
-<div class="timeline-item">
-<h3>Research Intern</h3>
-<p>S. N. Bose National Centre for Basic Sciences, Kolkata</p>
-</div>
-
-</div>
-
+<section id="awards">
+<h2>Awards & Achievements</h2>
+<ul> <li>IIRS ISRO Merit Award (START) – 2025</li> <li>IIRS ISRO Merit Award (Python & Machine Learning) 
+2025</li> <li>SERF Award Astronomy in Ancient India – 2024</li> <li>National Space Day Quiz Award 
+2024</li> <li>DST PURSE Fellowship Award</li> <li>GSA-INSA Award</li> </ul>
 </section>
-
-<section>
-
-<h2 class="section-title">Research Interests</h2>
-
-<div class="skills">
-
-<div class="skill">Planetary Science</div>
-<div class="skill">Mars Atmosphere</div>
-<div class="skill">Ionosphere</div>
-<div class="skill">Remote Sensing</div>
-<div class="skill">Space Weather</div>
-<div class="skill">Green Hydrogen</div>
-<div class="skill">Electrocatalysis</div>
-<div class="skill">Nanomaterials</div>
-<div class="skill">Surface Chemistry</div>
-<div class="skill">Condensed Matter Physics</div>
-
+<section id="mars">
+<h2>Mars Research Vision</h2>
+<div class="card">
+My future goal is to pursue a PhD in:
+<ul> <li>Mars Atmosphere</li> <li>Mars Ionosphere</li> <li>Planetary Evolution</li> <li>Space Weather</li>
+<li>Solar Wind Interaction</li> <li>Mars Exploration Missions</li> <li>Planetary Instrument Development</
+li> </ul>
 </div>
-
 </section>
-
-<section>
-
-<h2 class="section-title">Technical Skills</h2>
-
-<div class="skills">
-
-<div class="skill">Python</div>
-<div class="skill">MATLAB</div>
-<div class="skill">Mathematica</div>
-<div class="skill">GIS</div>
-<div class="skill">QGIS</div>
-<div class="skill">XRD</div>
-<div class="skill">Raman</div>
-<div class="skill">FEG-SEM</div>
-<div class="skill">SEM</div>
-<div class="skill">UV-Vis</div>
-<div class="skill">LC-HRMS</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Major Projects</h2>
-
-<div class="card">
-Mars Atmosphere and Ionosphere
-</div>
-
-<div class="card">
-Solar Rotation and Sunspot Area Analysis
-</div>
-
-<div class="card">
-Green Hydrogen Generation (HER/OER)
-</div>
-
-<div class="card">
-Electrochemical Wastewater Treatment
-</div>
-
-<div class="card">
-NdNiO3 Nanostructure Characterization
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">Awards</h2>
-
-<div class="card">
-IIRS ISRO Merit Award – START Program (2025)
-</div>
-
-<div class="card">
-IIRS ISRO Merit Award – Geodata Processing using Python & ML (2025)
-</div>
-
-<div class="card">
-DST PURSE Fellowship Award
-</div>
-
-<div class="card">
-National Space Day Quiz Award
-</div>
-
-</section>
-
 <section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="card">
-
-<p><b>Email:</b> hareshjadav928@gmail.com</p>
-
-<p><b>Phone:</b> +91 7096512572</p>
-
-<p><b>Location:</b> Gujarat, India</p>
-
-<p><b>Research Goal:</b> PhD in Planetary Science and Mars Research</p>
-
-</div>
-
+<h2>Contact</h2>
+<p>Email: hareshjadav928@gmail.com</p>
+<p>Phone: +91 7096512572</p>
+3
+<p>Location: Gujarat, India</p>
+<p>Research Focus: Mars Science & Planetary Physics</p>
 </section>
-
 <footer>
-
-<h3>Haresh R. Jadav</h3>
-
-<p>
-Exploring Mars • Advancing Physics • Building Future Space Technologies
-</p>
-
+© 2026 Haresh R. Jadav | Exploring Mars & Beyond 🚀
 </footer>
-
-</body>
-</html>
+<script>
+function showPage(id){
+let sections=document.querySelectorAll("section");
+sections.forEach(function(section){ section.classList.remove("active"); });
+document.getElementById(id).classList.add("active");
+}
+</script>
+</body> </html>
+4
