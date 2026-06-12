@@ -2,191 +2,187 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Haresh Jadav | Mars & Physics</title>
+<title>Mars Research Portal | Haresh Jadav</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: white;
-    overflow: hidden;
-    background: black;
+    overflow-x: hidden;
+    background: radial-gradient(circle at center, #1a1a2e, #000000);
 }
 
-/* NAV */
+/* ===== MARSH BACKGROUND ===== */
+#mars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 220px;
+    margin-left: -110px;
+    margin-top: -110px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 60px rgba(255, 80, 50, 0.6);
+}
+
+/* ===== SATELLITE ORBIT ===== */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 50%;
+    animation: rotate 12s linear infinite;
+}
+
+.satellite {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: silver;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+}
+
+/* rotation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== NAVBAR ===== */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0,0,0,0.6);
-    padding: 12px;
-    text-align: center;
-    z-index: 10;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    z-index: 1000;
 }
 
 nav button {
-    background: none;
-    border: none;
+    background: transparent;
+    border: 1px solid #555;
     color: white;
-    margin: 0 10px;
-    font-size: 16px;
+    padding: 8px 12px;
+    margin: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 nav button:hover {
-    color: orange;
+    background: #ff3c3c;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 section {
     display: none;
-    padding: 80px 40px;
-    margin-top: 60px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 12px;
+    padding: 120px 40px;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
-.active {
+section.active {
     display: block;
 }
 
-/* TITLES */
-h1, h2, h3 {
-    color: orange;
+h1 {
+    color: #ffcc70;
 }
 
-/* CANVAS BACKGROUND */
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND ANIMATION -->
-<canvas id="space"></canvas>
+<!-- SATELLITE + MARS -->
+<div id="mars"></div>
 
-<!-- NAV -->
+<div class="orbit">
+    <div class="satellite"></div>
+</div>
+
+<!-- NAVIGATION -->
 <nav>
-    <button onclick="show('home')">Home</button>
-    <button onclick="show('about')">About</button>
-    <button onclick="show('research')">Research</button>
-    <button onclick="show('projects')">Projects</button>
-    <button onclick="show('blog')">Mars Blog</button>
-    <button onclick="show('contact')">Contact</button>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('research')">Research</button>
+    <button onclick="showSection('awards')">Awards</button>
+    <button onclick="showSection('marssec')">Mars</button>
+    <button onclick="showSection('software')">Software</button>
+    <button onclick="showSection('links')">Useful Links</button>
+    <button onclick="showSection('join')">Join</button>
+    <button onclick="showSection('others')">Others</button>
 </nav>
 
 <!-- SECTIONS -->
 <section id="home" class="active">
-    <h1>Haresh Jadav</h1>
-    <h3>Mars | Physics | Astrophysics Researcher</h3>
+    <h1>Home</h1>
+    <p>Welcome to my Mars & Space Research Portfolio.</p>
 </section>
 
 <section id="about">
-    <h2>About</h2>
-    <p>Mars and planetary science researcher.</p>
+    <h1>About Me</h1>
+    <p>I am working on astrophysics, Mars exploration, and nanomaterials research.</p>
 </section>
 
 <section id="research">
-    <h2>Research</h2>
-    <p>Solar physics, FESEM, Mars atmosphere studies.</p>
+    <h1>Research</h1>
+    <p>Focused on rGO applications, HER/OER reactions, and planetary science.</p>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <p>Mars atmospheric and material research.</p>
+<section id="awards">
+    <h1>Awards</h1>
+    <p>List your achievements and recognitions here.</p>
 </section>
 
-<section id="blog">
-    <h2>Mars Blog</h2>
-    <p>NASA + ISRO updates and Mars exploration notes.</p>
+<section id="marssec">
+    <h1>Mars</h1>
+    <p>Mars exploration, satellites, and surface chemistry studies.</p>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>yourmail@gmail.com</p>
+<section id="software">
+    <h1>Software</h1>
+    <p>Tools: Origin, VESTA, Python, MATLAB, XRD analysis tools.</p>
 </section>
 
+<section id="links">
+    <h1>Useful Links</h1>
+    <p>NASA, ESA, Materials Project, research journals.</p>
+</section>
+
+<section id="join">
+    <h1>Join</h1>
+    <p>Collaborate with me in space research and materials science.</p>
+</section>
+
+<section id="others">
+    <h1>Others</h1>
+    <p>Extra notes, blogs, or experimental ideas.</p>
+</section>
+
+<!-- SCRIPT -->
 <script>
-function show(id) {
-    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+function showSection(id) {
+    let sections = document.querySelectorAll("section");
+    sections.forEach(sec => sec.classList.remove("active"));
+
     document.getElementById(id).classList.add("active");
 }
-
-/* =========================
-   MARS + SATELLITE ANIMATION
-========================= */
-
-const canvas = document.getElementById("space");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let centerX = canvas.width / 2;
-let centerY = canvas.height / 2;
-
-let angle = 0;
-
-// Mars properties
-const marsRadius = 70;
-
-// orbit radius
-const orbitRadius = 180;
-
-function drawMars() {
-    const gradient = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, marsRadius);
-    gradient.addColorStop(0, "#ff7b3a");
-    gradient.addColorStop(1, "#8b2e1a");
-
-    ctx.beginPath();
-    ctx.fillStyle = gradient;
-    ctx.arc(centerX, centerY, marsRadius, 0, Math.PI * 2);
-    ctx.fill();
-}
-
-// satellite
-function drawSatellite(x, y) {
-    ctx.fillStyle = "white";
-    ctx.fillRect(x - 6, y - 2, 12, 4); // body
-    ctx.fillRect(x - 10, y - 6, 6, 2); // solar panel
-    ctx.fillRect(x + 4, y - 6, 6, 2);  // solar panel
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // stars
-    for (let i = 0; i < 100; i++) {
-        ctx.fillStyle = "white";
-        ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 1, 1);
-    }
-
-    drawMars();
-
-    // satellite orbit
-    let x = centerX + orbitRadius * Math.cos(angle);
-    let y = centerY + orbitRadius * Math.sin(angle);
-
-    drawSatellite(x, y);
-
-    angle += 0.01;
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    centerX = canvas.width / 2;
-    centerY = canvas.height / 2;
-});
 </script>
 
 </body>
