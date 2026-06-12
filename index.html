@@ -2,95 +2,118 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mars Research Portal | Haresh Jadav</title>
+<title>MARS MISSION CONTROL | Haresh Jadav</title>
 
 <style>
+/* ================= GLOBAL ================= */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(ellipse at center, #05070f, #000000);
+    color: #ffffff;
     overflow-x: hidden;
-    background: radial-gradient(circle at center, #1a1a2e, #000000);
 }
 
-/* ===== MARSH BACKGROUND ===== */
-#mars {
+/* STAR FIELD BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png");
+    opacity: 0.15;
+    z-index: 0;
+}
+
+/* ================= TOP NAV (NASA STYLE) ================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 12px;
+    background: rgba(0,0,0,0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav button {
+    background: transparent;
+    border: 1px solid rgba(255, 80, 50, 0.5);
+    color: #ffffff;
+    padding: 8px 14px;
+    margin: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 12px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+nav button:hover {
+    background: #ff3b1f;
+    box-shadow: 0 0 15px #ff3b1f;
+}
+
+/* ================= MARS SECTION ================= */
+#mars-container {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
-    width: 220px;
-    height: 220px;
-    margin-left: -110px;
-    margin-top: -110px;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg');
-    background-size: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 60px rgba(255, 80, 50, 0.6);
+    transform: translate(-50%, -50%);
 }
 
-/* ===== SATELLITE ORBIT ===== */
+/* Mars planet */
+#mars {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg");
+    background-size: cover;
+    box-shadow: 0 0 80px rgba(255, 80, 40, 0.4);
+    position: relative;
+}
+
+/* Orbit ring */
 .orbit {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 400px;
-    margin-left: -200px;
-    margin-top: -200px;
-    border: 1px dashed rgba(255,255,255,0.2);
+    width: 420px;
+    height: 420px;
+    margin-left: -210px;
+    margin-top: -210px;
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 50%;
-    animation: rotate 12s linear infinite;
+    animation: rotate 18s linear infinite;
 }
 
+/* Satellite */
 .satellite {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 20px;
-    height: 20px;
-    background: silver;
+    width: 14px;
+    height: 14px;
+    background: #cfd8dc;
     border-radius: 50%;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 12px #ffffff;
 }
 
-/* rotation */
+/* orbit animation */
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* ===== NAVBAR ===== */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.7);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px;
-    z-index: 1000;
-}
-
-nav button {
-    background: transparent;
-    border: 1px solid #555;
-    color: white;
-    padding: 8px 12px;
-    margin: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-nav button:hover {
-    background: #ff3c3c;
-}
-
-/* ===== SECTIONS ===== */
+/* ================= PANELS ================= */
 section {
     display: none;
-    padding: 120px 40px;
-    max-width: 900px;
+    padding: 120px 60px;
+    max-width: 1000px;
     margin: auto;
     position: relative;
     z-index: 2;
@@ -100,87 +123,119 @@ section.active {
     display: block;
 }
 
-h1 {
-    color: #ffcc70;
+/* NASA style panel */
+.panel {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
+h1 {
+    color: #ff4b2b;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+p {
+    color: #d0d0d0;
+    line-height: 1.6;
+}
 </style>
 </head>
 
 <body>
 
-<!-- SATELLITE + MARS -->
-<div id="mars"></div>
-
-<div class="orbit">
-    <div class="satellite"></div>
-</div>
-
 <!-- NAVIGATION -->
 <nav>
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('about')">About Me</button>
-    <button onclick="showSection('research')">Research</button>
-    <button onclick="showSection('awards')">Awards</button>
-    <button onclick="showSection('marssec')">Mars</button>
-    <button onclick="showSection('software')">Software</button>
-    <button onclick="showSection('links')">Useful Links</button>
-    <button onclick="showSection('join')">Join</button>
-    <button onclick="showSection('others')">Others</button>
+    <button onclick="show('home')">HOME</button>
+    <button onclick="show('about')">ABOUT</button>
+    <button onclick="show('research')">RESEARCH</button>
+    <button onclick="show('awards')">AWARDS</button>
+    <button onclick="show('mars')">MARS</button>
+    <button onclick="show('software')">SOFTWARE</button>
+    <button onclick="show('links')">LINKS</button>
+    <button onclick="show('join')">JOIN</button>
+    <button onclick="show('others')">OTHERS</button>
 </nav>
+
+<!-- MARS VISUAL (always visible background centerpiece) -->
+<div id="mars-container">
+    <div id="mars"></div>
+    <div class="orbit">
+        <div class="satellite"></div>
+    </div>
+</div>
 
 <!-- SECTIONS -->
 <section id="home" class="active">
-    <h1>Home</h1>
-    <p>Welcome to my Mars & Space Research Portfolio.</p>
+    <div class="panel">
+        <h1>Mission Home</h1>
+        <p>NASA-style research dashboard for Mars exploration, nanomaterials, and astrophysics simulations.</p>
+    </div>
 </section>
 
 <section id="about">
-    <h1>About Me</h1>
-    <p>I am working on astrophysics, Mars exploration, and nanomaterials research.</p>
+    <div class="panel">
+        <h1>About Mission Scientist</h1>
+        <p>Working on rGO-based energy systems, Mars hydrogen generation (HER/OER), and planetary materials science.</p>
+    </div>
 </section>
 
 <section id="research">
-    <h1>Research</h1>
-    <p>Focused on rGO applications, HER/OER reactions, and planetary science.</p>
+    <div class="panel">
+        <h1>Research Division</h1>
+        <p>Focus: graphene-based catalysts, electrochemical hydrogen production, Mars surface chemistry modeling.</p>
+    </div>
 </section>
 
 <section id="awards">
-    <h1>Awards</h1>
-    <p>List your achievements and recognitions here.</p>
+    <div class="panel">
+        <h1>Recognition</h1>
+        <p>Academic achievements, publications, and research milestones.</p>
+    </div>
 </section>
 
-<section id="marssec">
-    <h1>Mars</h1>
-    <p>Mars exploration, satellites, and surface chemistry studies.</p>
+<section id="mars">
+    <div class="panel">
+        <h1>Mars Mission</h1>
+        <p>Simulated Mars orbit systems, atmospheric chemistry, and hydrogen extraction research.</p>
+    </div>
 </section>
 
 <section id="software">
-    <h1>Software</h1>
-    <p>Tools: Origin, VESTA, Python, MATLAB, XRD analysis tools.</p>
+    <div class="panel">
+        <h1>Software Stack</h1>
+        <p>Python • MATLAB • OriginLab • VESTA • XRD • Materials Project tools</p>
+    </div>
 </section>
 
 <section id="links">
-    <h1>Useful Links</h1>
-    <p>NASA, ESA, Materials Project, research journals.</p>
+    <div class="panel">
+        <h1>Mission Links</h1>
+        <p>NASA • ESA • arXiv • Materials Project • Science journals</p>
+    </div>
 </section>
 
 <section id="join">
-    <h1>Join</h1>
-    <p>Collaborate with me in space research and materials science.</p>
+    <div class="panel">
+        <h1>Join Mission</h1>
+        <p>Collaborate in Mars research, nanomaterials, and electrochemical systems.</p>
+    </div>
 </section>
 
 <section id="others">
-    <h1>Others</h1>
-    <p>Extra notes, blogs, or experimental ideas.</p>
+    <div class="panel">
+        <h1>Additional Data</h1>
+        <p>Blogs, ideas, experiments, and future mission concepts.</p>
+    </div>
 </section>
 
-<!-- SCRIPT -->
 <script>
-function showSection(id) {
-    let sections = document.querySelectorAll("section");
-    sections.forEach(sec => sec.classList.remove("active"));
-
+function show(id){
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
 }
 </script>
